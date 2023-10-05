@@ -35,19 +35,21 @@ def button_event():
                 gamer_input_number = f'猜對了~答案就是{set_number}唷~~'
             txt.set(gamer_input_number)
             break
-    except:
+    except: #若玩家輸入文字或小數就會執行這段程式碼並跳出提示訊息
         if isinstance(input_number.get(),str):
             gamer_input_number = f'勿輸入文字或小數\n 請輸入{min_value}-{max_value}的整數'
         # else:
         #     gamer_input_number = f'請遵守遊戲規則\n 請輸入{min_value}-{max_value}的整數'
         txt.set(gamer_input_number)
     
+# 設定提示訊息的位置、字體大小
 Label(ws, textvariable=txt, pady=2, font=('Comic Sans MS',15)).pack()
 
 # 設定使用者輸入數字的位置
 input_number = Entry(ws)
 input_number.place(x=120,y=125)
 
+# enter鈕的位置
 Button(
     ws,
     text="Enter", 
